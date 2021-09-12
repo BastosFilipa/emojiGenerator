@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+<img width="707" alt="Screen Shot 2021-09-12 at 17 39 34" src="https://user-images.githubusercontent.com/83431040/132995758-8ad48332-ffd5-45c9-9f69-100ca10559e0.png">
+
+
+
+
+# EmojiGenerator
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
