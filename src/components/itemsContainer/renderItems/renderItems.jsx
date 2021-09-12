@@ -2,9 +2,14 @@ import React from 'react';
 import emojis from '../../../resources/emojis';
 import './renderItems.css';
 
-const RenderItems = (props) => {
-  const emojisFiltered = emojis.filter(emoji => emoji.title.toLowerCase()
-    .includes(props.emoji.toLowerCase()));
+const RenderItems = ({ emoji }) => {
+  let emojisFiltered;
+ 
+  if(emoji.length === 0) {
+    emojisFiltered = [];
+  }
+  
+  emojisFiltered = emojis.filter(item => item.title.toLowerCase().includes(emoji.toLowerCase()));
 
   const handleEmojiClick = (emoji) => {
     navigator.clipboard.writeText(emoji.symbol);
@@ -13,9 +18,9 @@ const RenderItems = (props) => {
   return (
     <>
       <ul className="item">
-          { emojisFiltered.map((emoji) => (
-              <li class="tooltip" onClick={ () => handleEmojiClick(emoji) } key={emoji.title}>
-                <span class="tooltiptext">Copy</span>
+          { emoji.length !== 0 && emojisFiltered.map((emoji) => (
+              <li className="tooltip" onClick={ () => handleEmojiClick(emoji) } key={emoji.title}>
+                <span className="tooltiptext">Copy</span>
                 <div>{emoji.symbol}</div>
                 <div className="label">{emoji.title}</div>
               </li>

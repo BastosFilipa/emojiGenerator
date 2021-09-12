@@ -6,7 +6,6 @@ const ItemsContainer = () => {
     const [emojiSearched, setEmojiSearched] = useState('');
 
     const handleSearch = (wordSearched) => {
-        console.log('wordSearched', wordSearched);
         setEmojiSearched(wordSearched);
     };
 
